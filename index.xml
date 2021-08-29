@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ashwini Manoj's blog</title><link>https://ashwinimanoj.dev/</link><description>Recent content on Ashwini Manoj's blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 29 Aug 2021 22:15:03 +0530</lastBuildDate><atom:link href="https://ashwinimanoj.dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://ashwinimanoj.dev/posts/hello-world/</link><pubDate>Sun, 29 Aug 2021 22:15:03 +0530</pubDate><guid>https://ashwinimanoj.dev/posts/hello-world/</guid><description>Ashwini Manoj's blog https://ashwinimanoj.dev/posts/hello-world/ -&lt;p>Hello World!&lt;/p>
-&lt;p>I am planning to blogg my thoughts and learnings here. I have been writing in my head a lot these days!
-Today I finally decided to make it a reality. After all my tagline on facebook was &amp;ldquo;Coder. Dreamer. Developer&amp;rdquo; xD
-Also, I would like this to be a place where I can come back when I need a refresher.&lt;/p>
+&lt;p>I am planning to blog my thoughts and learnings here. I have been writing in my head a lot these days!
+Today I finally decided to make it a reality. After all my tagline on facebook was &amp;ldquo;Coder. Dreamer. Developer&amp;rdquo; xD&lt;/p>
+&lt;p>Also, I would like this to be a place where I can come back when I need a refresher.&lt;/p>
 &lt;p>Today it is about:&lt;/p>
 &lt;ol>
 &lt;li>Creating a new hugo site for my blog&lt;/li>
@@ -9,9 +9,9 @@ Also, I would like this to be a place where I can come back when I need a refres
 &lt;/ol>
 &lt;p>If you are seeing this (and you are not me) then I succeeded!&lt;/p>
 &lt;hr>
-&lt;p>To start with, I thougth I could use ubuntu. Looking at hugo&amp;rsquo;s documentation, I realised that brew is avaialble for linux!
+&lt;p>To start with, I thought I could use ubuntu. Looking at hugo&amp;rsquo;s documentation, I realised that brew is avaialble for linux!
 So I went ahead and installed brew. Using which I installed hugo.&lt;/p>
-&lt;p>&lt;code>https://docs.brew.sh/Homebrew-on-Linux&lt;/code>&lt;/p>
+&lt;p>See: &lt;a href="https://docs.brew.sh/Homebrew-on-Linux">Installing homebrew on linux&lt;/a>&lt;/p>
 &lt;p>And then it was about&lt;/p>
 &lt;pre>&lt;code>brew install hugo
 hugo new site myblog
