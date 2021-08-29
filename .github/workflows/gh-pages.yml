@@ -1,6 +1,12 @@
 name: github pages
 
 on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person triggering'
+        required: false
+        default: 'Ashwini Manoj'
   push:
     branches:
       - master
@@ -14,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
 
