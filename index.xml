@@ -13,11 +13,11 @@ Today I finally decided to make it a reality. After all my tagline on facebook w
 So I went ahead and installed brew. Using which I installed hugo.&lt;/p>
 &lt;p>See: &lt;a href="https://docs.brew.sh/Homebrew-on-Linux">Installing homebrew on linux&lt;/a>&lt;/p>
 &lt;p>And then it was about&lt;/p>
-&lt;pre>&lt;code>brew install hugo
+&lt;pre tabindex="0">&lt;code>brew install hugo
 hugo new site myblog
 &lt;/code>&lt;/pre>&lt;p>Now came the toughest part, choosing a theme! I went through the themes page and really liked Diary. Here&amp;rsquo;s how to add it&lt;/p>
-&lt;pre>&lt;code>cd myblog
+&lt;pre tabindex="0">&lt;code>cd myblog
 git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
 &lt;/code>&lt;/pre>&lt;p>Now that theme is done, I wanted to create a nice first post, hence this!&lt;/p>
-&lt;pre>&lt;code>hugo new posts/hello-world.md
+&lt;pre tabindex="0">&lt;code>hugo new posts/hello-world.md
 &lt;/code>&lt;/pre>- https://ashwinimanoj.dev/posts/hello-world/ -</description></item></channel></rss>
