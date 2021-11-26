@@ -1,5 +1,5 @@
 <!doctype html><html><head>
-<title>Hello World</title>
+<title>How not go wrong with Maven Profiles</title>
 <meta charset=utf-8>
 <meta name=X-UA-Compatible content="IE=edge">
 <meta name=google-site-verification content>
@@ -95,49 +95,38 @@ brightness_7
 <div class=post>
 <div class=post-head-wrapper-text-only>
 <div class=post-title>
-Hello World
+How not go wrong with Maven Profiles
 <div class=post-meta>
-<time itemprop=datePublished>
-2021-08-29 22:15
-</time>
 </div>
 </div>
 </div>
 <div class=post-body-wrapper>
 <div class=post-body v-pre>
-<p>Hello World!</p>
-<p>I am planning to blog my thoughts and learnings here. I have been writing in my head a lot these days!
-Today I finally decided to make it a reality. After all my tagline on facebook was &ldquo;Coder. Dreamer. Developer&rdquo; xD</p>
-<p>Also, I would like this to be a place where I can come back when I need a refresher.</p>
-<p>Today it is about:</p>
-<ol>
-<li>Creating a new hugo site for my blog</li>
-<li>Hosting this on github pages using the domain ashwinimanoj.dev</li>
-</ol>
-<p>If you are seeing this (and you are not me) then I succeeded!</p>
-<hr>
-<p>To start with, I thought I could use ubuntu. Looking at hugo&rsquo;s documentation, I realised that brew is avaialble for linux!
-So I went ahead and installed brew. Using which I installed hugo.</p>
-<p>See: <a href=https://docs.brew.sh/Homebrew-on-Linux>Installing homebrew on linux</a></p>
-<p>And then it was about</p>
-<pre tabindex=0><code>brew install hugo
-hugo new site myblog
-</code></pre><p>Now came the toughest part, choosing a theme! I went through the themes page and really liked Diary. Here&rsquo;s how to add it</p>
-<pre tabindex=0><code>cd myblog
-git submodule add https://github.com/AmazingRise/hugo-theme-diary.git themes/diary
-</code></pre><p>Now that theme is done, I wanted to create a nice first post, hence this!</p>
-<pre tabindex=0><code>hugo new posts/hello-world.md
+<p>While <a href=https://maven.apache.org/guides/introduction/introduction-to-profiles.html>maven&rsquo;s build profiles</a> make life easy to deploy in different environments,
+I had the misfortune of configuring it wrong today.</p>
+<p>I had a <code>my-artifactory</code> profile set up in <code>settings.xml</code> of the build agent with the credentials required to upload an asset.
+Also set up the central repo there to point to our instance of nexus. I had also set <code>my-artifactory</code> to be the default profile.
+This worked quite fine when reading and writing to our nexus.</p>
+<p>I had another repo that did a <code>mvn deploy -Pgithub</code>. This repo had the distributionManagement set in it&rsquo;s pom.xml file,
+where a profile for github and my-artifactory were defined.
+Recently `mvn deploy -Pmy-artifactory was added and that&rsquo;s when things started going wrong.</p>
+<p>Now as settings.xml sets <code>my-artifactory</code> to be active by default, my pom profile <code>my-artifactory</code> and <code>github</code> along with setting.xml&rsquo;s <code>my-artifactory</code> had become active.
+And now, instead of deploying to github it started deploying to the distributionManagement set in pom&rsquo;s <code>my-artifactory</code>.
+Ah, I should have seen this coming.</p>
+<p>Well, it was fixed by changing the progile used in settings.xml! Lesson learnt.</p>
+<p>I also learnt that using this can help you figure out what active profiles are applied:</p>
+<pre tabindex=0><code>mvn help:active-profiles -Pgithub
+</code></pre><p>And this can help you figure out the effective pom for the profile applied</p>
+<pre tabindex=0><code>mvn help:effective-pom -Pgithub
 </code></pre>
-<hr width=100% id=EOF>
-<p style=color:#777>Last modified on 2021-08-29</p>
 </div>
 </div>
 <nav class=post-pagination>
-<a class=newer-posts>
-Next<br>No newer posts.
+<a class=newer-posts href=https://ashwinimanoj.dev/posts/hello-world/>
+Next<br>Hello World
 </a>
-<a class=older-posts href=https://ashwinimanoj.dev/posts/how-not-to-go-wrong-with-maven-profiles/>
-Previous<br>How not go wrong with Maven Profiles
+<a class=older-posts>
+Previous<br>No older posts.
 </a>
 </nav>
 <div class=post-comment-wrapper>

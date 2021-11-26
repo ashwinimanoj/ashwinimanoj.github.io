@@ -2,4 +2,5 @@
 I am planning to blog my thoughts and learnings here. I have been writing in my head a lot these days! Today I finally decided to make it a reality. After all my tagline on facebook was &amp;ldquo;Coder. Dreamer. Developer&amp;rdquo; xD
 Also, I would like this to be a place where I can come back when I need a refresher.
 Today it is about:
-Creating a new hugo site for my blog Hosting this on github pages using the domain ashwinimanoj.</description></item></channel></rss>
+Creating a new hugo site for my blog Hosting this on github pages using the domain ashwinimanoj.</description></item><item><title>How not go wrong with Maven Profiles</title><link>https://ashwinimanoj.dev/posts/how-not-to-go-wrong-with-maven-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ashwinimanoj.dev/posts/how-not-to-go-wrong-with-maven-profiles/</guid><description>While maven&amp;rsquo;s build profiles make life easy to deploy in different environments, I had the misfortune of configuring it wrong today.
+I had a my-artifactory profile set up in settings.xml of the build agent with the credentials required to upload an asset. Also set up the central repo there to point to our instance of nexus. I had also set my-artifactory to be the default profile. This worked quite fine when reading and writing to our nexus.</description></item></channel></rss>
