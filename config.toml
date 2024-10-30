@@ -29,3 +29,6 @@ weight = 1
 
 [taxonomies]
    tag = "tags"
+
+[params]
+	social = true
